@@ -22,11 +22,14 @@ get '/tasks/:id' do
 end
 
 post '/tasks' do
-	@task = Task.new(params[:task])
+	@task = Task.new(goal: params[:goal])
 	@task.user_id = session[:user_id]
 	@task.save #save to database
 	# .new doesn't save things right away
 
+	@reward = Reward.new(reward_type: params[:reward])
+	@reward.task_id = @task.id
+	@reward.save
 	redirect "/tasks/#{@task.id}"
 	# double quotes allow string interpolation (#{})
 end

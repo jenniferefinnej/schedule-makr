@@ -16,6 +16,7 @@
 	<!-- change status of completion -->
 	<form action="/tasks/<%=task.id%>/reward" method="post">
 		<input type="hidden" name="_method" value="patch">
+
 		<% if task.completion == true %>
 			<input type="submit" value="Mark Incomplete">
 		<% else %>
@@ -30,4 +31,17 @@
 
 <div>
 <a href="/tasks/new">Create Task</a>
+
+<form action></form>
 </div>
+
+<footer>
+<% if session[:user_id] %>
+	<form action="/sessions/<%= session[:user_id]%>" method="post">
+		<input type ="hidden" name="_method" value="delete">
+		<input type="submit" value="Log Out">
+	</form>
+<% end %>
+</footer>
+
+
