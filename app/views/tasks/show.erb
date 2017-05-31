@@ -1,0 +1,11 @@
+<a href="/user/<%=session[:user_id]%>/tasks">See All Tasks</a>
+<%= @task.goal%>
+
+<% if session[:user_id] && session[:user_id]== @task.user_id%>
+
+	<form action="/tasks/<%= @task.id%>" method="post"> <!-- browser only knows post and get -->
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete Task">
+	</form>
+
+<%end%>

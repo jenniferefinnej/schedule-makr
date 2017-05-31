@@ -1,0 +1,33 @@
+<header align="center"><h1><%= @user.username%>'s To Do List:</h1>
+</header>
+
+<% @tasks.each do |task| %>
+	<p>
+		<%=task.goal%>
+	</p>
+
+
+	<form action="/tasks/<%= task.id%>" method="post">
+
+		<input type="hidden" name="_method" value="delete">
+
+		<input type="submit" value="Delete Task">
+	</form>
+	<!-- change status of completion -->
+	<form action="/tasks/<%=task.id%>/reward" method="post">
+		<input type="hidden" name="_method" value="patch">
+		<% if task.completion == true %>
+			<input type="submit" value="Mark Incomplete">
+		<% else %>
+			<input type="submit" value="Mark Complete">
+		<%end%>
+	</form>
+
+	<% if task.completion == true %>
+		<p>Reward: <%=task.reward.reward_type%> </p>
+	<%end%>
+<% end %>
+
+<div>
+<a href="/tasks/new">Create Task</a>
+</div>

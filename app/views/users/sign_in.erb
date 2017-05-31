@@ -1,0 +1,13 @@
+<% if @error %>
+	<p><%= @error%></p>
+<% end %>
+
+<header><h1>Sign In</h1></header>
+<form action="/sessions" method="post">
+	<input type="text" name="username" placeholder="username" required>
+	<input type="password" name="password" placeholder="password" required>
+	<!-- <input type ="email" name=""> -->	
+
+	<!-- type = password makes the password hidden -->
+	<input type="submit" value="Sign In">
+</form>

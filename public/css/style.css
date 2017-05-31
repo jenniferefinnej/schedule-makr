@@ -1,0 +1,18 @@
+header{
+	color: darkcyan;
+}
+body{
+	background-color: lightcyan;
+	margin: 20px;
+	font-family: monospace;
+	font-size: 15px;
+}
+p{
+	background-color: ghostwhite;
+	line-height: 3;
+	text-indent: 20px;
+}
+
+div{
+	line-height: 10;
+}

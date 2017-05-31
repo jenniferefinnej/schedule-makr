@@ -1,0 +1,6 @@
+<a href="/task/new">Create Task</a>
+
+<% @tasks.each do |task| %>
+	<a href="/tasks/<%=task.id%>"><%=task.goal%></a> 
+	<!--  alt to inserting url -->
+<% end %>

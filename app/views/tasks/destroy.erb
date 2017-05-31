@@ -1,0 +1,7 @@
+<form action="/tasks/<%= @task.id%>" method="post">
+	<a href="/tasks/<%= @task.id%>">Delete Task</a>
+
+	<input type="hidden" name="_method" value="delete">
+	<input type="text" name="task[goal]" value=<%= @task.goal%>>
+	<input type="submit" name="Delete Task">
+</form>
