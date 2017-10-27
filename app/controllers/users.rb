@@ -3,7 +3,7 @@
 get '/users/new' do
 	erb :'users/sign_up'
 end
-
+ 
 post '/users' do
 	@user = User.create(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], password: params[:password])
 	# to check if user is saved:
