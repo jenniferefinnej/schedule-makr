@@ -1,5 +1,5 @@
 get '/tasks' do
-	@tasks = Task.all
+	@tasks = Task.all 
 
 	erb :"tasks/index"
 end
